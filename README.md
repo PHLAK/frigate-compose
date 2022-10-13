@@ -1,7 +1,6 @@
-Frigate Compose
-===============
-
-A Dockerized environment for Frigate NVR.
+<p align="center">
+    <img src="frigate-compose.png" alt="Frigate Compose" width="40%">
+</p>
 
 <p align="center">
     <a href="https://github.com/users/PHLAK/sponsorship"><img src="https://img.shields.io/badge/Become_a-Sponsor-cc4195.svg?style=for-the-badge" alt="Become a Sponsor"></a>
