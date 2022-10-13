@@ -4,6 +4,7 @@ services:
 
   frigate:
     image: blakeblackshear/frigate:stable
+    privileged: true
     shm_size: ${SHM_SIZE:-64mb}
     env_file: config/frigate.env
     environment:
