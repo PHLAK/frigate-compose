@@ -8,7 +8,6 @@ services:
     shm_size: ${SHM_SIZE:-64mb}
     env_file: config/frigate.env
     environment:
-      DATABASE_PATH: /db/frigate.db
       TZ: ${TZ:-UTC}
     ports:
       - ${WEB_PORT:-5000}:5000

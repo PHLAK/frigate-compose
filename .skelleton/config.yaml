@@ -1,7 +1,7 @@
-# !!! DO NOT REMOVE THIS SECTION !!!
+# !!! DO NOT CHANGE OR REMOVE THIS SECTION !!!
 
 database:
-  path: "{DATABASE_PATH}"
+  path: /db/frigate.db
 
-# ↓↓↓ BEGIN USER CONFIGURATION ↓↓↓
+# ↓↓↓ BEGIN USER CONFIGURATION BELOW ↓↓↓
 
