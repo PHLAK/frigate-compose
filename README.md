@@ -22,7 +22,7 @@ Installation
   
   1. Clone the repository
 
-         git clone git@github.com:PHLAK/frigate-compose.git
+         git clone https://github.com/PHLAK/frigate-compose.git
 
   2. Initialize the configuration files
 
