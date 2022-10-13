@@ -32,6 +32,7 @@ Installation
 
          cp --verbose .skelleton/config/*.env config/
          cp --verbose .skelleton/.env .
+         cp --verbose .skelleton/config.yaml volumes/frigate/
 
   3. Set the environment variables in `.env`
 
