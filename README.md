@@ -53,7 +53,7 @@ file. Reference the official [Frigate configuration file docs](https://docs.frig
 for more info.
 
 > ℹ️ **NOTE:** After editing the `config.yaml` the `frigate` container must be 
-> restarted for changes to apply.
+> restarted with `docker compose up -d` for changes to apply.
 
 ### Watchtower
 
