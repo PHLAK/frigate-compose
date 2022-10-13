@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+
+  frigate:
+    image: blakeblackshear/frigate:stable
+    shm_size: ${SHM_SIZE:-64mb}
+    env_file: config/frigate.env
+    environment:
+      DATABASE_PATH: /db/frigate.db
+      TZ: ${TZ:-UTC}
+    ports:
+      - ${WEB_PORT:-5000}:5000
+      - ${RTMP_PORT:-1935}:1935
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+      - /dev/dri/renderD128
+    volumes:
+      - frigate-database:/db
+      - ./volumes/frigate:/config:ro
+      - ${CLIPS_PATH?:Clips path must be defined}:/media/frigate/clips
+      - ${RECORDINGS_PATH:?Recordings path must be defined}:/media/frigate/recordings
+      - type: tmpfs
+        target: /tmp/cache
+        tmpfs:
+          size: ${TMPFS_CACHE_SIZE:-1000000000}
+    labels:
+      com.centurylinklabs.watchtower.scope: ${COMPOSE_PROJECT_NAME}
+    restart: unless-stopped
+
+  watchtower:
+    image: containrrr/watchtower
+    env_file: config/watchtower.env
+    environment:
+      WATCHTOWER_SCOPE: ${COMPOSE_PROJECT_NAME}
+      TZ: ${TZ:-UTC}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      com.centurylinklabs.watchtower.scope: ${COMPOSE_PROJECT_NAME}
+    restart: unless-stopped
+
+volumes:
+  frigate-database: {}
