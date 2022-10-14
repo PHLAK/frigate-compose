@@ -4,7 +4,6 @@ services:
 
   frigate:
     image: blakeblackshear/frigate:stable
-    privileged: true
     network_mode: ${NETWORK_MODE:-bridge}
     shm_size: ${SHM_SIZE:-64mb}
     env_file: config/frigate.env
