@@ -21,7 +21,10 @@ services:
       - ./volumes/frigate:/config:ro
       - ${CLIPS_PATH?:Clips path must be defined}:/media/frigate/clips
       - ${RECORDINGS_PATH:?Recordings path must be defined}:/media/frigate/recordings
-    tmpfs: /tmp/cache
+      - type: tmpfs
+        target: /tmp/cache
+        tmpfs:
+          size: ${TMPFS_CACHE_SIZE:-1000000000}
     labels:
       com.centurylinklabs.watchtower.scope: ${COMPOSE_PROJECT_NAME}
     restart: unless-stopped
