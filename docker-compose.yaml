@@ -3,7 +3,7 @@ version: '3.9'
 services:
 
   frigate:
-    image: blakeblackshear/frigate:stable
+    image: ghcr.io/blakeblackshear/frigate:stable
     network_mode: ${NETWORK_MODE:-bridge}
     shm_size: ${SHM_SIZE:-64mb}
     env_file: config/frigate.env
