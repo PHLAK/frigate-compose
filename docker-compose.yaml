@@ -14,7 +14,6 @@ services:
       - ${RTMP_PORT:-1935}:1935
     devices:
       - /dev/bus/usb:/dev/bus/usb
-      - /dev/dri/renderD128
     volumes:
       - frigate-database:/db
       - ./volumes/frigate:/config:ro
