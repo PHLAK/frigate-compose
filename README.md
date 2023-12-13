@@ -27,17 +27,13 @@ Installation
 
           make init
 
-      or manually
-
-         cp --verbose .skelleton/config/*.env config/
-         cp --verbose .skelleton/.env .
-         cp --verbose .skelleton/config.yaml volumes/frigate/
+     or manually run the commands in `Makefile`
 
   3. Set the environment variables in `.env`
 
-  4. Set the application-specific environment variables by editing the files found in the `config` directory
+  4. Set service-specific environment variables by editing the files found in the `environment.d` directory (optional)
 
-  5. Place your `config.yaml` file and any additional configuration files in `volumes/config`
+  5. Modify the `volumes/frigate/config.yaml` file with your configuration options
 
   6. Run `docker-compose config` to validate and confirm your configuration
 

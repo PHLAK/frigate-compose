@@ -6,7 +6,7 @@ services:
     image: ghcr.io/blakeblackshear/frigate:stable
     network_mode: ${NETWORK_MODE:-bridge}
     shm_size: ${SHM_SIZE:-64mb}
-    env_file: config/frigate.env
+    env_file: environment.d/frigate.env
     environment:
       TZ: ${TZ:-UTC}
     ports:
@@ -30,7 +30,7 @@ services:
 
   watchtower:
     image: containrrr/watchtower
-    env_file: config/watchtower.env
+    env_file: environment.d/watchtower.env
     environment:
       WATCHTOWER_SCOPE: ${COMPOSE_PROJECT_NAME}
       TZ: ${TZ:-UTC}

@@ -1,2 +1,2 @@
-/config/*.env
+/environment.d/*.env
 /.env
