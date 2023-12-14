@@ -4,6 +4,9 @@ services:
 
   frigate:
     image: ghcr.io/blakeblackshear/frigate:stable
+    extends:
+      file: hardware-acceleration.yaml
+      service: hardware-acceleration
     network_mode: ${NETWORK_MODE:-bridge}
     shm_size: ${SHM_SIZE:-64mb}
     env_file: environment.d/frigate.env

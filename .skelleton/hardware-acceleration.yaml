@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  hardware-acceleration:
+    # --------------------------------------------------------------------------
+    # Intel QuickSync or VA-API
+    # --------------------------------------------------------------------------
+
+    # cap_add:
+    #   - CAP_PERFMON
+    # devices:
+    #   - /dev/dri:/dev/dri
+
+    # --------------------------------------------------------------------------
+    # NVIDIA GPU
+    # --------------------------------------------------------------------------
+
+    # environment:
+    #   - NVIDIA_DRIVER_CAPABILITIES=all
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu,video]

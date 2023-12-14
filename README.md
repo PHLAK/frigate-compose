@@ -58,6 +58,12 @@ the `config/watchtower.env` file. Check out the [Watchtower documentation](https
 (specifically the [Arguments](https://containrrr.dev/watchtower/arguments/) page)
 for more information on the available envionment variables and what they do.
 
+Hardware Acceleration
+---------------------
+
+To enable hardware acceleration for transcoding you can uncomment the relevant
+lines in `hardware-acceleration.yaml` based on your available hardware.
+
 Updating Containers
 -------------------
 
