@@ -17,7 +17,7 @@ services:
       - /dev/bus/usb:/dev/bus/usb
     volumes:
       - frigate-database:/db
-      - ./volumes/frigate:/config:ro
+      - ./volumes/frigate/config.yaml:/config/config.yaml:ro
       - ${CLIPS_PATH?:Clips path must be defined}:/media/frigate/clips
       - ${RECORDINGS_PATH:?Recordings path must be defined}:/media/frigate/recordings
       - /etc/localtime:/etc/localtime:ro
