@@ -18,7 +18,7 @@ Requirements
 
 Installation
 ------------
-  
+
   1. Clone the repository
 
          git clone https://github.com/PHLAK/frigate-compose.git
@@ -44,11 +44,12 @@ Configuration
 
 ### Frigate
 
-Frigate configuration is controlled through the `config.yaml` configuration 
+Frigate configuration is controlled through the `config.yaml` configuration
 file. Reference the official [Frigate configuration file docs](https://docs.frigate.video/configuration/index)
 for more info.
 
-> ℹ️ **NOTE:** After editing the `config.yaml` the `frigate` container must be 
+> [!NOTE]
+> After editing the `config.yaml` the `frigate` container must be
 > restarted (e.g. `docker compose up -d`) for changes to apply.
 
 ### Watchtower
