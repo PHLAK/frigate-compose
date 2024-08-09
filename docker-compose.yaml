@@ -16,7 +16,7 @@ services:
     volumes:
       - frigate-database:/db
       - ${FRIGATE_MODEL_CACHE_PATH:-frigate-model-cache}:/config/model_cache
-      - ./volumes/frigate/config.yaml:/config/config.yaml:ro
+      - ./volumes/frigate/config.yaml:/config/config.yaml
       - ${CLIPS_PATH?:Clips path must be defined}:/media/frigate/clips
       - ${RECORDINGS_PATH:?Recordings path must be defined}:/media/frigate/recordings
       - /etc/localtime:/etc/localtime:ro
