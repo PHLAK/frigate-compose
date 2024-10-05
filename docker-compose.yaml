@@ -12,6 +12,8 @@ services:
       - ${AUTH_PORT:-8971}:8971
       - ${WEB_PORT:-5000}:5000
       - ${RTMP_PORT:-1935}:1935
+      - ${WEBRTC_PORT:-8555}:8555/tcp
+      - ${WEBRTC_PORT:-8555}:8555/udp
     devices:
       - /dev/bus/usb:/dev/bus/usb
     volumes:
