@@ -78,7 +78,7 @@ To manually fetch updated images and update the running containers run
 Default Port Reference
 ----------------------
 
-| Service | Port  |
-| ------- | ----- |
-| Web UI | `5000` |
-| RTMP   | `1935` |
+| Service | Port   |
+| ------- | ------ |
+| Web UI  | `5000` |
+| RTMP    | `1935` |
