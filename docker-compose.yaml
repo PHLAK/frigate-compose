@@ -1,7 +1,7 @@
 services:
 
   frigate:
-    image: ghcr.io/blakeblackshear/frigate:stable
+    image: ghcr.io/blakeblackshear/frigate:${FRIGATE_VERSION:-stable}
     extends:
       file: hardware-acceleration.yaml
       service: hardware-acceleration
@@ -32,7 +32,7 @@ services:
     restart: unless-stopped
 
   watchtower:
-    image: containrrr/watchtower
+    image: containrrr/${WATCHTOWER_VERSION:-watchtower}
     env_file: environment.d/watchtower.env
     environment:
       WATCHTOWER_SCOPE: ${COMPOSE_PROJECT_NAME}
