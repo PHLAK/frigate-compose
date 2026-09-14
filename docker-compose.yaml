@@ -17,7 +17,8 @@ services:
     devices:
       - /dev/bus/usb:/dev/bus/usb
     volumes:
-      - frigate-database:/db
+      - ${DATABASE_VOLUME:-frigate-database}:/db
+      - ${FRIGATE_CONFIG_PATH:-./volumes/frigate/config.yaml}:/config/config.yaml
       - ${FRIGATE_MODEL_CACHE_PATH:-frigate-model-cache}:/config/model_cache
       - ${MEDIA_PATH?:Media path must be defined}:/media/frigate
       - /etc/localtime:/etc/localtime:ro
@@ -35,7 +36,7 @@ services:
     environment:
       WATCHTOWER_SCOPE: ${COMPOSE_PROJECT_NAME}
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - ${DOCKER_SOCKET:-/var/run/docker.sock}:/var/run/docker.sock
       - /etc/localtime:/etc/localtime:ro
     labels:
       com.centurylinklabs.watchtower.scope: ${COMPOSE_PROJECT_NAME}
