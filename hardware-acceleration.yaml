@@ -5,6 +5,9 @@ services:
     devices: [/dev/dri]
 
   intel:
+    devices: [/dev/dri]
+
+  intel-npu:
     devices: [/dev/accel, /dev/dri]
 
   nvidia:
