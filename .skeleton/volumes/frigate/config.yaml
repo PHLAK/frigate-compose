@@ -1,7 +1,0 @@
-# !!! DO NOT CHANGE OR REMOVE THIS SECTION !!!
-
-database:
-  path: /db/frigate.db
-
-# ↓↓↓ BEGIN USER CONFIGURATION BELOW ↓↓↓
-

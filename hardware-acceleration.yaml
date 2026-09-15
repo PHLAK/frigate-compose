@@ -1,0 +1,23 @@
+services:
+  cpu: {}
+  
+  amd:
+    devices: [/dev/dri]
+
+  intel:
+    devices: [/dev/accel, /dev/dri]
+
+  nvidia:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  coral-usb:
+    devices: [/dev/bus/usb]
+
+  coral-pcie:
+    devices: [/dev/apex_0]
